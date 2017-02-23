@@ -8,15 +8,11 @@ public class Video {
     private Server[] cache;
     private int id;
     private int[] requests;
-    private int endpoints;
 
-    Video(double size,int id){//, Server data_center, Server[] cache){
+    Video(double size,int id){
 
         setSize(size);
         setId(id);
-        setDataCenter(data_center);
-        setCacheServers(cache);
-
     }
 
     public int getId() {
@@ -31,13 +27,14 @@ public class Video {
         this.size = size;
     }
 
+
+
     public int[] getRequests(){
         return requests;
     }
 
     public void setRequests(int[] requests){
         this.requests = requests;
-
     }
 
     public void setDataCenter(Server data_center){
@@ -61,6 +58,18 @@ public class Video {
 
     public Server[] getCache(){
         return this.cache;
+    }
+
+    public String toString(){
+        String toReturn = "";
+
+        toReturn = toReturn + "Size: " + (int)size + "\nId: " + (int)id + "\nRequests:\n";
+
+        for(int ii = 0; ii < requests.length; ii++){
+            toReturn = toReturn + "\n" + requests[ii];
+        }
+
+        return toReturn;
     }
 
 }
