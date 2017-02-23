@@ -48,10 +48,10 @@ public class ParseInput {
         for(int ii = 0; ii < sizes[0]; ii++){
             double videoSize = Double.parseDouble(line[ii]);
             this.videos[ii] = new Video(videoSize, ii);
-            this.input.remove(0);
         }
+        this.input.remove(0);
 
-        //Parse endpoints
+        //Parse endpointsr
         boolean reached = false;
 
         this.endpoints = new Endpoint[sizes[1]];
