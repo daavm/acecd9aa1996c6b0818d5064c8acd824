@@ -2,7 +2,7 @@ public class Endpoint {
 
     private int id;
     private double dataCenterLatency;
-    private double[] serverLatency;
+    private double[] latencyToServers;
     private double connections; // number of connections without counting the connection to DataCenter
     private double[] connectedServers;
 
