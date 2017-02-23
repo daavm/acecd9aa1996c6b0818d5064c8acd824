@@ -44,9 +44,10 @@ public class ParseInput {
 
         //Parse videos
         this.videos = new Video[sizes[0]];
+        String line[] = this.input.get(0).split(" ");
         for(int ii = 0; ii < sizes[0]; ii++){
-            double videoSize = Double.parseDouble(this.input.get(0));
-            this.videos[i] = new Video(videoSize, i);
+            double videoSize = Double.parseDouble(line[ii]);
+            this.videos[ii] = new Video(videoSize, ii);
             this.input.remove(0);
         }
 
@@ -56,7 +57,7 @@ public class ParseInput {
         this.endpoints = new Endpoint[sizes[1]];
         i = 0;
         while(!reached){
-            String[] line = this.input.get(0).split(" ");
+            line = this.input.get(0).split(" ");
             if(line.length > 2){
                 reached = true;
             } else {
@@ -90,7 +91,7 @@ public class ParseInput {
             video.setRequests(requests);
         }
         for(int ii = 0; ii < sizes[2]; ii++){
-            String[] line = this.input.get(0).split(" ");
+            line = this.input.get(0).split(" ");
             int idVideo = Integer.parseInt(line[0]);
             int idEndpoint = Integer.parseInt(line[1]);
             int nRequests = Integer.parseInt(line[2]);
@@ -100,5 +101,21 @@ public class ParseInput {
             this.videos[idVideo].setRequests(requests);
             this.input.remove(0);
         }
+    }
+
+    public Video[] getVideos() {
+        return videos;
+    }
+
+    public Endpoint[] getEndpoints() {
+        return endpoints;
+    }
+
+    public double getCapacity(){
+        return this.sizes[4];
+    }
+
+    public int[] getSizes() {
+        return sizes;
     }
 }
