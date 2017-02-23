@@ -6,13 +6,23 @@ public class Video {
     private double size = 0;
     private Server data_center;
     private Server[] cache;
+    private int id;
 
-    Video(double size, Server data_center, Server[] cache){
+    Video(double size,int id, Server data_center, Server[] cache){
 
         setSize(size);
+        setId(id);
         setDataCenter(data_center);
         setCacheServers(cache);
 
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public void setSize(double size){

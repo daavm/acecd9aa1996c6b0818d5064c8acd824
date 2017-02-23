@@ -50,7 +50,7 @@ public class Server {
     
     boolean isAlready(double videoid, Video[] array){
         for (Video video: array) {
-            if(video.id == videoid){
+            if(video.getId() == videoid){
                 return true;
             }
             
