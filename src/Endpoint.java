@@ -56,4 +56,13 @@ public class Endpoint {
         this.connectedServers = connectedServers;
     }
 
+    public String toString(){
+        res = "id: " + id + "\n" + "Latency for data center: " + dataCenterLatency
+                + "\n" + "Number of connections: " + connections + "\n";
+        for (int i = 0; i < connections; i++)
+            res = res + "ID's of connected servers: " + (i+1) + ":" + connectedServers[i];
+        for (int i = 0; i < connections; i++)
+            res = res + "Latency for server number " + (i+1) + ":" + latencyToServers[i];
+    }
+
 }
