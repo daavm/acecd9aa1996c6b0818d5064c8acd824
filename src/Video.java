@@ -63,13 +63,13 @@ public class Video {
     public String toString(){
         String toReturn = "";
 
-        toReturn = toReturn + "Size: " + (int)size + "\nId: " + (int)id + "\nRequests:\n";
+        toReturn = toReturn + "Size: " + (int)size + "\nId: " + (int)id + "\nRequests:";
 
         for(int ii = 0; ii < requests.length; ii++){
             toReturn = toReturn + "\n" + requests[ii];
         }
 
-        return toReturn;
+        return toReturn+"\n\n";
     }
 
 }
