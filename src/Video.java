@@ -4,14 +4,14 @@
 public class Video {
 
     private double size = 0;
-    private Server data_center = new Server();
+    private Server data_center;
     private Server[] cache;
 
-    Video(double size, Server data_center, double caches){
+    Video(double size, Server data_center, Server[] cache){
 
         setSize(size);
         setDataCenter(data_center);
-        setCacheServers(caches);
+        setCacheServers(cache);
 
     }
 
@@ -23,11 +23,8 @@ public class Video {
         this.data_center = data_center;
     }
 
-    public void setCacheServers(double caches){
-        this.cache = new Server[caches];
-        for(int ii = 0; ii < caches; ii++){
-            this.cache[ii] = new Server();
-        }
+    public void setCacheServers(Server[] cache){
+        this.cache = cache;
     }
 
     public double getSize(){
