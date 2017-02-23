@@ -3,11 +3,10 @@ public class Endpoint {
     private int id;
     private double dataCenterLatency;
     private double[] latencyToServers;
-    private double connections; // number of connections without counting the connection to DataCenter
+    private int connections; // number of connections without counting the connection to DataCenter
     private double[] connectedServers;
 
-
-    Endpoint(int id, double dataCenterLatency, double connections){
+    Endpoint(int id, double dataCenterLatency, int connections){
         this.id = id;
         this.dataCenterLatency = dataCenterLatency;
         this.connections = connections;
@@ -17,21 +16,20 @@ public class Endpoint {
         }
     }
 
-
-    public double getLatencyToDataCenter() {
-        return latencyToDataCenter;
+    public int getId() {
+        return id;
     }
 
-    public void setLatencyToDataCenter(double latencyToDataCenter) {
-        this.latencyToDataCenter = latencyToDataCenter;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public double getNumberOfConnections() {
-        return numberOfConnections;
+    public double getDataCenterLatency() {
+        return dataCenterLatency;
     }
 
-    public void setNumberOfConnections(double numberOfConnections) {
-        this.numberOfConnections = numberOfConnections;
+    public void setDataCenterLatency(double dataCenterLatency) {
+        this.dataCenterLatency = dataCenterLatency;
     }
 
     public double[] getLatencyToServers() {
@@ -42,11 +40,20 @@ public class Endpoint {
         this.latencyToServers = latencyToServers;
     }
 
+    public int getConnections() {
+        return connections;
+    }
+
+    public void setConnections(int connections) {
+        this.connections = connections;
+    }
+
     public double[] getConnectedServers() {
-        return ConnectedServers;
+        return connectedServers;
     }
 
     public void setConnectedServers(double[] connectedServers) {
-        ConnectedServers = connectedServers;
+        this.connectedServers = connectedServers;
     }
+
 }
