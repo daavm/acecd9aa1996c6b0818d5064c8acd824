@@ -47,5 +47,15 @@ public class Server {
     public void setMin(int min) {
         this.min = min;
     }
+    
+    boolean isAlready(double videoid, Video[] array){
+        for (Video video: array) {
+            if(video.id == videoid){
+                return true;
+            }
+            
+        }
+        return false;
+    }
 
 }
