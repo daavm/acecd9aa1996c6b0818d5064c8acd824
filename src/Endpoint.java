@@ -11,8 +11,10 @@ public class Endpoint {
         this.id = id;
         this.dataCenterLatency = dataCenterLatency;
         this.connections = connections;
-        this.latencyToServers = new double[connections];
-        this.connectedServers = new double[connections];
+        if (connections > 0) {
+            this.latencyToServers = new double[connections];
+            this.connectedServers = new double[connections];
+        }
     }
 
 
