@@ -8,12 +8,12 @@ public class Video {
     private Server[] cache;
     private int id;
 
-    Video(double size,int id, Server data_center, Server[] cache){
+    Video(double size,int id){//, Server data_center, Server[] cache){
 
         setSize(size);
         setId(id);
-        setDataCenter(data_center);
-        setCacheServers(cache);
+//        setDataCenter(data_center);
+//        setCacheServers(cache);
 
     }
 
