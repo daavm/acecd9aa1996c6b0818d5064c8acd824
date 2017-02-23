@@ -1,44 +1,50 @@
 public class Endpoint {
 
-    
-    private int latencyToDataCenter;
-    private int numberOfConnections; // without counting the connection to DataCenter
-    private int latencyToServers[];
-    private int ConnectedServers[];
+    private int id;
+    private double dataCenterLatency;
+    private double[] serverLatency;
+    private double connections; // number of connections without counting the connection to DataCenter
+    private double[] connectedServers;
 
 
-    public int getLatencyToDataCenter() {
+    Endpoint(int id, double dataCenterLatency, double connections){
+        this.id = id;
+        this.dataCenterLatency = dataCenterLatency;
+        this.connections = connections;
+        this.latencyToServers = new double[connections];
+        this.connectedServers = new double[connections];
+    }
+
+
+    public double getLatencyToDataCenter() {
         return latencyToDataCenter;
     }
 
-    public void setLatencyToDataCenter(int latencyToDataCenter) {
+    public void setLatencyToDataCenter(double latencyToDataCenter) {
         this.latencyToDataCenter = latencyToDataCenter;
     }
 
-    public int getNumberOfConnections() {
+    public double getNumberOfConnections() {
         return numberOfConnections;
     }
 
-    public void setNumberOfConnections(int numberOfConnections) {
+    public void setNumberOfConnections(double numberOfConnections) {
         this.numberOfConnections = numberOfConnections;
     }
 
-    public int[] getLatencyToServers() {
+    public double[] getLatencyToServers() {
         return latencyToServers;
     }
 
-    public void setLatencyToServers(int[] latencyToServers) {
+    public void setLatencyToServers(double[] latencyToServers) {
         this.latencyToServers = latencyToServers;
     }
 
-    public int[] getConnectedServers() {
+    public double[] getConnectedServers() {
         return ConnectedServers;
     }
 
-    public void setConnectedServers(int[] connectedServers) {
+    public void setConnectedServers(double[] connectedServers) {
         ConnectedServers = connectedServers;
     }
-
-    public Endpoint(){}
-
 }
