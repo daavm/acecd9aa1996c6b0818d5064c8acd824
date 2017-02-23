@@ -7,9 +7,5 @@ public class Main {
 
         Video[] videos = parser.getVideos();
         Endpoint[] endpoints = parser.getEndpoints();
-
-        for(Video video : videos){
-            System.out.println("Video #" + video.getId() + " has a size of " + video.getSize() + " MB");
-        }
     }
 }
