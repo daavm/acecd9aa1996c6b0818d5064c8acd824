@@ -8,6 +8,7 @@ public class Video {
     private Server[] cache;
     private int id;
     private int[] requests;
+    private int endpoints;
 
     Video(double size,int id){//, Server data_center, Server[] cache){
 
@@ -30,8 +31,13 @@ public class Video {
         this.size = size;
     }
 
+    public int[] getRequests(){
+        return requests;
+    }
+
     public void setRequests(int[] requests){
         this.requests = requests;
+
     }
 
     public void setDataCenter(Server data_center){
@@ -40,7 +46,10 @@ public class Video {
 
     public int getRequestsAt(int endpoint){
         return requests[endpoint];
+
     }
+
+
 
     public void setCacheServers(Server[] cache){
         this.cache = cache;
